@@ -1,0 +1,33 @@
+let vitorias = 0
+let derrotas = 0 
+let nLivel = 0
+let heroi = ""
+for (let j = 0; j < 30; j++) {
+for (let i = 0; i <10; i++) {
+    vitorias = 1 + vitorias
+    derrotas = 0.5 + derrotas 
+}
+nLivel = getLivel(vitorias,derrotas)
+
+if ( nLivel <=10){
+    heroi="Ferro"
+} else if (nLivel>11 && nLivel<=20){
+    heroi="Bronze"
+}else if (nLivel>21 && nLivel<=50){
+    heroi = "Prata"
+}else if (nLivel>51 && nLivel<=80){
+    heroi="Ouro"
+}else if (nLivel>81 && nLivel<=90){
+    heroi ="Diamante"
+}else if (nLivel>91 && nLivel<=100){
+    heroi ="Lendário"
+}else if (nLivel>101) {
+    heroi = "Imortal"
+}
+console.log("O herói tem saldo de **" + nLivel +"** está no nível " + heroi)
+
+}
+function getLivel (nWins, nDefeats){
+       let getLivel=nWins- nDefeats
+    return getLivel
+  }
